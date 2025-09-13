@@ -1,22 +1,23 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const btnReclamar = document.getElementById("btnReclamar");
-  const hamburger = document.getElementById("hamburger");
-  const menu = document.getElementById("menu");
-  const premioBox = document.getElementById("premioBox");
+// ============ MENÚ HAMBURGUESA ============
+const hamburger = document.getElementById("hamburger");
+const menu = document.getElementById("menu");
 
-  // Botón reclamar → WhatsApp
-  btnReclamar.addEventListener("click", () => {
-    const textoPremio = premioBox.textContent;
-    const match = textoPremio.match(/\$(\d+)/);
-    const premio = match ? match[1] : "0";
-
-    const numero = "7442073056"; // Número fijo de WhatsApp
-    const mensaje = encodeURIComponent(`gane el premio del sorteo de ${premio}`);
-    window.open(`https://wa.me/${numero}?text=${mensaje}`, "_blank");
-  });
-
-  // Menú hamburguesa
+if (hamburger && menu) {
   hamburger.addEventListener("click", () => {
-    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
   });
-});
+}
+
+// ============ BOTÓN WHATSAPP ============
+const btnReclamar = document.getElementById("btnReclamar");
+const premioBox = document.getElementById("premioBox");
+
+if (btnReclamar && premioBox) {
+  btnReclamar.addEventListener("click", () => {
+    const premioTexto = premioBox.textContent.match(/\$[0-9]+/);
+    const premio = premioTexto ? premioTexto[0] : "$0";
+    const numero = "7442073056"; // Número de WhatsApp
+    const mensaje = `Gané el premio del sorteo de ${premio} pesos`;
+    window.open(`https://wa.me/52${numero}?text=${encodeURIComponent(mensaje)}`, "_blank");
+  });
+}
