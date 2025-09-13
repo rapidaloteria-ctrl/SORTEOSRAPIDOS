@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lotería</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Barra superior -->
+  <header class="top-bar">
+    <div class="box">FECHA</div>
+    <div class="box" id="premioBox">PREMIO A JUGAR ($100)</div>
+
+    <!-- Menú hamburguesa -->
+    <div class="menu-container">
+      <div class="hamburger" id="hamburger">
+        ☰
+      </div>
+      <nav class="menu" id="menu">
+        <a href="index.html">Página principal</a>
+        <a href="historial.html">Historial de ganadores</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Sección reglas y resultado -->
+  <main class="main-content">
+    <div class="rules">REGLAS DE LA LOTERIA</div>
+    <div class="winner-info">
+      <div class="winner-number">
+        NUMERO DE LOTERIA GANADOR<br>
+        <!-- Aquí tú pondrás el número manualmente -->
+        <span id="numeroGanador">493822</span>
+      </div>
+      <div class="claim">
+        <button id="btnReclamar">
+          Reclamar premio por WhatsApp
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Sección videos -->
+  <section class="videos">
+    <div class="video-box">
+      <h3>Cómo se obtiene el resultado</h3>
+      <iframe width="100%" height="250" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+        title="Video resultado" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="video-box">
+      <h3>Entrega del premio al ganador</h3>
+      <iframe width="100%" height="250" src="https://www.youtube.com/embed/ysz5S6PUM-U" 
+        title="Video entrega" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
