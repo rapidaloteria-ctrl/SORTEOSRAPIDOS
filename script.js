@@ -10,14 +10,26 @@ if (hamburger && menu) {
 
 // ============ BOTÓN WHATSAPP ============
 const btnReclamar = document.getElementById("btnReclamar");
+const btnReclamar2 = document.getElementById("btnReclamar2");
 const premioBox = document.getElementById("premioBox");
 
-if (btnReclamar && premioBox) {
+// Función para enviar mensaje a un número
+function reclamarPremio(numero) {
+  const premioTexto = premioBox.textContent.match(/\$[0-9]+/);
+  const premio = premioTexto ? premioTexto[0] : "$0";
+  const mensaje = `Gané el premio del sorteo de ${premio}`;
+  window.open(`https://wa.me/52${numero}?text=${encodeURIComponent(mensaje)}`, "_blank");
+}
+
+if (btnReclamar) {
   btnReclamar.addEventListener("click", () => {
-    const premioTexto = premioBox.textContent.match(/\$[0-9]+/);
-    const premio = premioTexto ? premioTexto[0] : "$0";
-    const numero = "7442073056"; // Número de WhatsApp
-    const mensaje = `Gané el premio del sorteo de ${premio} pesos`;
-    window.open(`https://wa.me/52${numero}?text=${encodeURIComponent(mensaje)}`, "_blank");
+    reclamarPremio("7442073056"); // Número 1
   });
 }
+
+if (btnReclamar2) {
+  btnReclamar2.addEventListener("click", () => {
+    reclamarPremio("7444268440"); // Número 2
+  });
+}
+
