@@ -29,7 +29,7 @@ if (btnReclamar) {
 
 if (btnReclamar2) {
   btnReclamar2.addEventListener("click", () => {
-    reclamarPremio("7444268440"); // Número 2
+    reclamarPremio("7447781452"); // Número 2
   });
 }
 
